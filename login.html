@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script defer src="./login.js"></script> -->
+
+    <link rel="icon" href="images/mits-logo.png" type="image/png">
+    <style>
+        * {
+            box-sizing: border-box !important;
+            text-decoration: none !important;
+            list-style: none !important;
+            /* font-family: Roboto Slab !important; */
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+        }
+
+
+        /* body { */
+            /* background: rgb(97, 70, 89); */
+            /* background: linear-gradient(90deg, rgba(97, 70, 89, 1) 0%, rgba(185, 88, 177, 1) 33%, rgba(128, 203, 205, 1) 71%, rgba(128, 205, 141, 1) 95%); */
+        /* } */
+
+        .mains {
+            width: 100%;
+            /* height: 100vh; */
+
+            /* background: rgb(97, 70, 89);
+            background: linear-gradient(90deg, rgba(97, 70, 89, 1) 0%, rgba(185, 88, 177, 1) 33%, rgba(128, 203, 205, 1) 71%, rgba(128, 205, 141, 1) 95%); */
+        }
+
+        .head {
+            width: 100%;
+            margin-top: -16px;
+        }
+
+        .head_main {
+            
+            width: 100%;
+            /* display: flex; */
+            margin-top: 0px;
+        }
+
+        .containers {
+            max-width: 1200px;
+            /* height: 100vh; */
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            /* border: 2px solid red; */
+        }
+
+        .login {
+            width: 250px;
+            /* height: 300px; */
+            /* border-radius: 15px; */
+            text-align: center;
+            /* background-color: #ffffff63; */
+            /* box-shadow: 2px 2px 5px; */
+        }
+
+        .inputs {
+            padding-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .inputs input {
+            margin-top: 6px;
+            padding: 3px 30px;
+            outline: none;
+            border: none;
+            font-size: 12px;
+            background-color: transparent;
+            border-bottom: 1px solid black;
+        }
+
+        .buttons {
+            padding-top: 30px;
+        }
+
+        .buttons input {
+            margin: 0px 48px;
+            padding: 2px 52px;
+            border-radius: 15px;
+            border: none;
+            transition: 2s;
+            /* background: rgb(210, 72, 241);
+            background: radial-gradient(circle, rgba(210, 72, 241, 1) 0%, rgba(85, 4, 218, 1) 100%); */
+        }
+
+        .login_main {
+            /* background-color: cornsilk; */
+            /* background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
+            background: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
+            /* background: radial-gradient(circle at 10% 20%, rgba(216, 241, 230, 0.46) 0.1%, rgba(233, 226, 226, 0.28) 90.1%); */
+            width: 100%;
+            float: left;
+        }
+
+        .logins {
+            width: 40%;
+            justify-content: center;
+            align-items: center;
+            /* justify-content: space-around; */
+            /* background-color: #ffffff63; */
+            /* background: rgba(255, 255, 255, 0.5); */
+            background-color: white;
+            animation-name: login;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-out;
+            padding-bottom: 50px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+        }
+
+        /* .login {} */
+
+        /* icon css end */
+        @keyframes login {
+            0% {
+                transform: scale(0.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* .login-box { */
+            /* position: absolute; */
+            /* top: 50%; */
+            /* left: 50%; */
+            /* width: 400px; */
+            /* padding: 40px; */
+            /* transform: translate(-50%, -50%); */
+            /* background: rgba(0, 0, 0, .5); */
+            /* box-sizing: border-box; */
+            /* box-shadow: 0 15px 25px rgba(0, 0, 0, .6); */
+            /* border-radius: 10px; */
+         
+
+        .login-box h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #272e6e;
+            text-align: center;
+        }
+
+        .form-inputs h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #272e6e;
+            text-align: center;
+        }
+
+        .login-box .user-box {
+            position: relative;
+        }
+        .row .user-box{
+            position: relative;
+        }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: black;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #272e6e;
+            outline: none;
+            background: transparent;
+        }
+        .row .user-box input,
+        .row .user-box select {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #000000;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #272e6e;
+            outline: none;
+            background: transparent;
+        }
+
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #272e6e;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .user-box select option{
+            color: black;
+        }
+
+        .login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
+            top: -20px;
+            left: 0;
+            color: red;
+            /* color: red; */
+            font-size: 12px;
+        }
+        .row .user-box input:focus~label,
+        .row .user-box input:valid~label,
+        .row .user-box select:focus~label,
+        .row .user-box select:valid~label {
+            top: -20px;
+            left: 15px;
+            color: #ff0000;
+            color: red;
+            font-size: 12px;
+        }
+        /* .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        } */
+
+        .row .user-box label {
+             position: absolute;
+             top: -20px;
+            left: 15px;
+            padding: 10px 0;  
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .btnn input{
+            background-color: transparent;
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: red;
+            font-size: 16px;
+            border: none;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px
+        }
+        .btnn input:hover {
+            background: #f40303;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #f40303,
+                0 0 25px #f40303,
+                0 0 50px #f40303,
+                0 0 100px #f40303;
+        }
+        .login-box a:hover {
+            background: #f40303;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #f40303,
+                0 0 25px #f40303,
+                0 0 50px #f40303,
+                0 0 100px #f40303;
+        }
+/* 
+        .login-box a span {
+            position: absolute;
+            display: block;
+        } */
+
+        /* .login-box a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #03e9f4);
+            animation: btn-anim1 1s linear infinite;
+        } */
+
+        /* @keyframes btn-anim1 {
+            0% {
+                left: -100%;
+            }
+
+            50%,
+            100% {
+                left: 100%;
+            }
+        } */
+
+        /* .login-box a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #03e9f4);
+            animation: btn-anim2 1s linear infinite;
+            animation-delay: .25s
+        } */
+
+        /* @keyframes btn-anim2 {
+            0% {
+                top: -100%;
+            }
+
+            50%,
+            100% {
+                top: 100%;
+            }
+        } */
+
+        /* .login-box a span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #03e9f4);
+            animation: btn-anim3 1s linear infinite;
+            animation-delay: .5s
+        } */
+
+        /* @keyframes btn-anim3 {
+            0% {
+                right: -100%;
+            }
+
+            50%,
+            100% {
+                right: 100%;
+            }
+        } */
+
+        /* .login-box a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #03e9f4);
+            animation: btn-anim4 1s linear infinite;
+            animation-delay: .75s
+        } */
+
+        /* @keyframes btn-anim4 {
+            0% {
+                bottom: -100%;
+            }
+
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+
+        <!-- Header Section Start Here -->
+        <div class="head">
+            <div class="container">
+    
+                <div class="head_main">
+    
+                    <nav class="navbar navbar-expand-lg navbar-light p-0 m-0">
+                        <a class="navbar-brand  logo border-dark header_logo" href="index.html">
+                            <img class="img-fluid " width="90px" src="images/mits-logo.png" alt=""> MITS</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item margin_right">
+                                    <a class="nav-link my_nav" href="index.html">HOME <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item margin_right">
+                                    <a class="nav-link my_nav" href="about.html">ABOUT</a>
+                                </li>
+                                <li class="nav-item margin_right">
+                                    <a class="nav-link my_nav" href="contact.html">CONTACT US</a>
+                                </li>
+    
+                                <li class="nav-item dropdown margin_right">
+                                    <a class="nav-link my_nav dropdown-toggle"  role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        COURSES
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="ug.php">Under Graduate</a>
+                                        <a class="dropdown-item" href="pg.php">Post Graduate</a>
+                                        <a class="dropdown-item" href="phd.php">Ph.D</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="fee.html">Fee Structure</a>
+                                        
+                                    </div>
+                                </li>
+                                <!-- <li class="nav-item margin_right">
+                                    <a class="nav-link my_nav" href="#contact_us">Contact Us</a>
+                                </li> -->
+                            </ul>
+                            <div class="log_btn margin_right">
+                                <a href="login.html">Login</a>
+                                <a  href="register-form.html">Register</a>
+                                <!-- <a data-toggle="tab" href="#register">Register</a> -->
+                            </div>
+    
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Header Section End Here -->
+    <div class="login_main">
+        <div class="container mt-3 d-flex justify-content-center justify-content-around">
+            <div class="logins">
+
+
+                <!-- <h2>Toggleable Tabs</h2> -->
+                <br>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs d-flex justify-content-around">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#Login">Login</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#register">Register</a>
+                    </li> -->
+
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div id="Login" class="container tab-pane active"><br>
+                        <div class="mains">
+                            <div class="containers d-flex justify-content-center align-items-center">
+                                <div class="login">
+                                    <div class="login-box">
+                                        <h2>Login</h2>
+                                        <form method="post" action="login.php" id="loginform">
+                                            <div class="user-box">
+                                                <input type="text" name="lusername" required="" id="email2" autocomplete="off">
+                                                <label>Username</label>
+                                            </div>
+                                            <div class="user-box">
+                                                <input type="password" name="lpassword" required="" id="password2">
+                                                <label>Password</label>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col btnn text-center">
+                                                    <input type="submit" value="login" name="submit">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="register" class="container tab-pane fade"><br>
+                        <div class="form">
+                            <div class="container-fluid  d-flex justify-content-center">
+                                <div class="form-inputs">
+                                    <h2 class="text-center">Register</h2>
+
+                                    
+
+                                     <form action="registration.php"  id="registerform" method="post" ><br>
+                                        <div class="name">
+                                            <div class="row">
+                                                <!-- <div class="col user-box"> -->
+                                                    <div class="input-control">
+                                                        <label for="" >First name</label>
+                                                    <input type="text" id="firstname" name="firstname">
+                                                    
+                                                    <div class="error"></div>
+                                                    </div>
+                                                <!-- </div> -->
+                                                <!-- <div class="col user-box"> -->
+                                                    <div class="input-control">
+                                                        <label for="">Last name</label>
+                                                    <input type="text" id="lastname" name="lastname">
+                                                    
+                                                    <div class="error"></div>
+                                                    </div>                                                
+                                                <!-- </div> -->
+                                            </div>
+                                        </div> <br>
+                                        <div class="row">
+                                            <!-- <div class="col user-box"> -->
+                                                <div class="input-control">
+                                                    <label for="">DOB</label>
+                                                <input type="date" id="dob" required name="dob">
+                                               
+                                                <div class="error"></div>
+                                                </div> </div><br>
+                                            <!-- </div> -->
+                                            <!-- <div class="col user-box"> -->
+                                                <div class="row">
+                                                <div class="input-control">
+                                                    <label for="">Gender</label>
+                                                <select id="gender" required name="gender">
+                                                    <option value="">Please select</option>
+                                                    <option value="M">Male</option>
+                                                    <option value="F">Female</option>
+                                                    <option value="O">Other</option>
+                                                </select>
+                                                
+                                                <div class="error"></div>
+                                                </div>
+                                            <!-- </div> -->
+                                        </div><br>
+                                        <div class="">
+
+                                            <!-- <div class="email-input col user-box"> -->
+                                                <div class="input-control">
+                                                    <label for="">Email</label>
+                                                <input type="email" id="email" name="email">
+                                                
+                                                <div class="error"></div>
+                                                </div>
+                                            <!-- </div> -->
+                                        </div><br>
+                                        <div class="">
+                                            <!-- <div class="phone-input col user-box"> -->
+                                                <div class="input-control">
+                                                    <label for="">Phone No.</label>
+                                                <input type="text" id="no" name="no">
+                                                
+                                                <div class="error"></div>
+                                                </div>                                            
+                                            <!-- </div> -->
+                                        </div><br>
+                                        <div class="">
+                                            <!-- <div class="password-input col user-box"> -->
+                                                <div class="input-control">
+                                                    <label for="" >Password</label>
+                                                <input type="password" id="password" name="password">
+                                               
+                                                <div class="error"></div>
+                                                </div>
+                                            <!-- </div> -->
+                                        </div><br>
+                                        <div class="">
+                                            <!-- <div class="password2-input col user-box"> -->
+                                                <div class="input-control">
+                                                    <label for="">Confirm password</label>
+                                                <input type="password" id="cpassword" name="cpassword">
+                                               
+                                                <div class="error"></div>
+                                                </div>
+                                            <!-- </div> -->
+                                        </div>
+                                        <div class="register-botton row">
+                                            <div class="col btnn text-center">
+                                                <input type="submit" value="Register" name="submit" >
+                                                <!-- <button type="submit" name="submit">Register</button> -->
+                                            </div>
+                                        </div>
+                                    </form> 
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
